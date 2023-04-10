@@ -10,6 +10,7 @@ I am using **Python** for this practical.
 ## Prerequisite
 
 -Azure Subscription
+
 -knowledge about Azure fundamentals and Azure Functions (Resource for study provided below)
 
 

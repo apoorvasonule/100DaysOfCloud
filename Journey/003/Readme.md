@@ -1,52 +1,50 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
+![image](https://user-images.githubusercontent.com/75572990/231517501-f6c8ae28-565f-4e78-ac04-ef4f61b86063.png)
 
-# New post title here
+# WordPress on Azure App Service
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+✍️ Create a WordPress site using Azure App Service
+
 
 ## Prerequisite
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+Knowledge about these topics will help. To learn about them, click on the links provided:
+- Azure SQL database : https://learn.microsoft.com/en-us/azure/azure-sql/database/sql-database-paas-overview?view=azuresql
+- Azure App Services : https://learn.microsoft.com/en-us/azure/app-service/overview
 
-## Use Case
-
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
-
-## Cloud Research
-
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
 
 ## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+### Step 1 — Create Resource Group
+- Go to azure portal and serach for resource group.
+- Click on the result and create a resource group.
+- Give it a name and location and hit create.
 
-### Step 1 — Summary of Step
+### Step 2 — WordPress on App Service
+- Search for WordPress on App Service in search bar, select the result.
+- Select resource group made in step 1, give your app a unique name, and select location.
+- Keep the hosting plan as Basic
+- Setup credentials for your WordPress site.
+- Review + create.
 
-![Screenshot](https://via.placeholder.com/500x300)
+<img width="478" alt="Screenshot 2023-04-12 212245" src="https://user-images.githubusercontent.com/75572990/231516099-74a5f60f-0a59-4c95-933e-e8f5471d4f44.png">
 
-### Step 1 — Summary of Step
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 3 — Browse your new WordPress Site
+- Go to the overview pane of the wordpress app created in previous step.
+- Under Domains, Copy the default domain link and paste it in a new tab.
+- Wait for the site to load, it can take 5-7 minutes.
+  <img width="405" alt="image" src="https://user-images.githubusercontent.com/75572990/231520751-d91ba811-d59e-4f74-ae37-0f65ff0ae332.png">
 
-### Step 3 — Summary of Step
+- Once the site is loaded, it will look something like this 
+<img width="467" alt="image" src="https://user-images.githubusercontent.com/75572990/231521276-498a0f93-fce9-49b1-970a-73f6b3f1e465.png">
 
-![Screenshot](https://via.placeholder.com/500x300)
+- To access the WordPress Admin page, browse to /wp-admin and use the credentials you created in the WordPress settings step.
+<img width="273" alt="image" src="https://user-images.githubusercontent.com/75572990/231521486-1a967a4f-8a10-4fd1-a46c-4b92839ca837.png">
 
-## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
-
-## Next Steps
-
-✍️ Describe what you think you think you want to do next.
 
 ## Social Proof
 
-✍️ Show that you shared your process on Twitter or LinkedIn
-
-[link](link)
+https://www.linkedin.com/feed/update/urn:li:share:7051954068730114048/

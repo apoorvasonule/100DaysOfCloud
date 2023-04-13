@@ -1,25 +1,35 @@
-**Add a cover photo like:**
-![placeholder image](https://via.placeholder.com/1200x600)
-
-# New post title here
+# Create Virtual Network in Azure
 
 ## Introduction
 
-✍️ (Why) Explain in one or two sentences why you choose to do this project or cloud topic for your day's study.
+To create a virtual network in Azure, then create two virtual machines (VMs) in the network, deploy Azure Bastion to securely connect to the VMs from the internet, and communicate privately between the VMs.
+
 
 ## Prerequisite
+- Azure subscription
 
-✍️ (What) Explain in one or two sentences the base knowledge a reader would need before describing the the details of the cloud service or topic.
+Knowledge about networking
+- https://devblogs.microsoft.com/premier-developer/understanding-cidr-notation-when-designing-azure-virtual-networks-and-subnets/
+- https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-virtual-networks/1-introduction
 
-## Use Case
-
-- 🖼️ (Show-Me) Create an graphic or diagram that illustrate the use-case of how this knowledge could be applied to real-world project
-- ✍️ (Show-Me) Explain in one or two sentences the use case
 
 ## Cloud Research
+- **How many IP addresses does Azure hold per subnet?**
+The number of IP addresses that Azure can hold per subnet depends on the address space and the subnet mask that you define for the subnet.
+For example, if you define a subnet with an address space of 10.0.0.0/24, the subnet mask is 255.255.255.0, which means that the subnet can hold up to 256 IP addresses. Azure holds 5 IP addresses for every subnet. The first and last IP in each subnet is reserved for the network identification and for broadcast, respectively. Azure also holds 3 additional addresses for internal use starting from the first address in the subnet. So, this leave 256-5 = 251 usable IP addresses.
 
-- ✍️ Document your trial and errors. Share what you tried to learn and understand about the cloud topic or while completing micro-project.
-- 🖼️ Show as many screenshot as possible so others can experience in your cloud research.
+- **What is the smallest IP address range you can specify for an Azure subnet?**
+The smallest IP address range you can specify for an Azure subnet is a /29 prefix, which provides a total of 8 IP addresses, with 3 usable addresses after accounting for the network, internal use, and broadcast addresses.
+
+- **In this IP range 10.1.0.0/29 what does the number after the slash represent?**
+The number after the slash represents the subnet mask.
+
+- **Can a subnet be deleted from a virtual network?**
+Yes, a subnet can be deleted from a virtual network. It's important to note that deleting a subnet will also delete all resources that are associated with that subnet, such as virtual machines or network interfaces. Also, if a subnet is associated with a network security group, you will need to remove the association before you can delete the subnet.
+
+- **Can changes be made to an IP address range?** 
+Yes, changes can be made to an IP address range in Azure. It can be changed by updating the virtual network configuration. To do so, you need to go to the virtual network settings in the Azure portal or use the Azure CLI or PowerShell. Then, you can modify the IP address range and save the changes. However, it's important to note that changing the IP address range of a virtual network can affect the IP addresses of all the resources within that virtual network, and may require to reconfigure the IP addresses of virtual machines and network interfaces.
+
 
 ## Try yourself
 

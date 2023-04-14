@@ -33,30 +33,56 @@ Yes, changes can be made to an IP address range in Azure. It can be changed by u
 
 ## Try yourself
 
-✍️ Add a mini tutorial to encourage the reader to get started learning something new about the cloud.
+### Step 1 — Create a Resource Group
+- Go to azure portal and serach for resource group.
+- Click on the result and create a resource group.
+- Give it a name and location and hit create.
+<img width="475" alt="image" src="https://user-images.githubusercontent.com/75572990/232022961-ea2f4709-9519-4232-9b40-112f41566bfb.png">
 
-### Step 1 — Summary of Step
 
-![Screenshot](https://via.placeholder.com/500x300)
 
-### Step 1 — Summary of Step
+### Step 2 — Create a Virtual Network
+- Search Virtual Network and select it.
+- Select Resource group created in step 1.
+- Give name for virtual network and region.
+- Go to IP address tab, Check if default ip address under Add an IP address space is 10.0.0.0/16. If not, select the garbage can icon to remove any address space that already appears, and then enter 10.0.0.0/16.
+- Click add subnet and give name as default and address range as 10.0.0.0/24.
+- On security tab, enable azure bastion.
+- Review + create
+<img width="278" alt="image" src="https://user-images.githubusercontent.com/75572990/232026200-60356f65-828c-4e66-8654-6c0a73a0388d.png">
 
-![Screenshot](https://via.placeholder.com/500x300)
 
-### Step 3 — Summary of Step
 
-![Screenshot](https://via.placeholder.com/500x300)
+### Step 3 — Create Virtual Machines
+- Create 2 VMs in the virtual network created in step 2.
+- Search for virtual machine and select it.
+- Give name for VM, same region as virtual network, image as windows server 2019 datacenter.
+- Give administrator accounts details.
+- Go to networking tab, select the virtual network and subnet created in step 2.
+- leave rest as default and hit review+create.
+- repeat these steps for VM 2.
 
-## ☁️ Cloud Outcome
 
-✍️ (Result) Describe your personal outcome, and lessons learned.
 
-## Next Steps
+### Step 4 — Connect to VMs
+- On virtual machine page, at the top click connect.
+- Select RDP and download the file or select bastion.
+- Give credentials for VMs and connect.
 
-✍️ Describe what you think you think you want to do next.
+
+
+### Step 5 — Communicate between VMs
+- From VM1, open powershell.
+- We have to allow ICMP(Internet Control Message Protocol) to make connection between VM1 and VM2.
+- enter the following command to allow ICMP.
+``New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4``
+- Open VM2 and open powershell and give following command
+``ping VM1``
+- This will be the output. 
+<img width="480" alt="image" src="https://user-images.githubusercontent.com/75572990/232047223-4a77b1ef-0de2-458b-94be-ef4818dbb422.png">
+
+
 
 ## Social Proof
 
-✍️ Show that you shared your process on Twitter or LinkedIn
-
-[link](link)
+https://www.linkedin.com/posts/apoorva-sonule-07523317b_100daysofcloud-azure-azurecommunity-activity-7052623478457323521-86vD?utm_source=share&utm_medium=member_desktop
